@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <title>Голосование</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="/">Голосование</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Главная</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main role="main" class="container">
+
+    <div class="row">
+        <div class="col-12">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createItemModal">
+                Добавить вопрос
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover" id="mainTable">
+                <thead>
+                <tr>
+                    <th scope="col">№п/п</th>
+                    <th scope="col">Вопрос</th>
+                    <th scope="col">Ответ</th>
+                    <th scope="col">Статус</th>
+                    <th scope="col">Действия</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Сколько вешать в граммах?</td>
+                    <td>Немного, Побольше, Ваще дофига</td>
+                    <td>Не активен</td>
+                    <td>
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group mr-2" role="group">
+                                <button type="button" class="btn btn-success">S</button>
+                                <button type="button" class="btn btn-warning">E</button>
+                                <button type="button" class="btn btn-danger">D</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal fade" id="createItemModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Создание вопроса</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="create-answer">
+                        <div class="form-group">
+                            <label for="question">Вопрос:</label>
+                            <input type="text" class="form-control" id="question" placeholder="Введите вопрос" name="question">
+                        </div>
+                        <div class="form-group" id="answers">
+                            <label for="answer">Ответы:</label>
+                            <input type="text" class="form-control" id="answer" placeholder="Ответ" name="answers[]">
+                            <input type="text" class="form-control" placeholder="Ответ" name="answers[]">
+                        </div>
+
+                        <button id="add-answer" type="button" class="btn btn-primary">Добавить ответ</button>
+                        <button id="remove-answer" type="button" class="btn btn-danger">Удалить ответ</button>
+                        <button type="submit" class="btn btn-success">Создать</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main><!-- /.container -->
+
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/serialize.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/app.js"></script>
+</body>
+</html>

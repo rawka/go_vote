@@ -1,0 +1,10 @@
+body {
+    padding-top: 5rem;
+}
+.row {
+    padding-bottom: 1.5rem;
+}
+
+#answers > .form-control {
+    margin-bottom: 1rem;
+}
